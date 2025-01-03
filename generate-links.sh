@@ -35,4 +35,8 @@ echo "Setting up dotfiles from: $(pwd)"
 GenerateLink $(pwd)/config/zed/keymap.json $usrcfg/zed/keymap.json
 GenerateLink $(pwd)/config/zed/settings.json $usrcfg/zed/settings.json
 
+# Kitty
+GenerateLink $(pwd)/config/kitty/kitty.conf $usrcfg/kitty/kitty.conf
+GenerateLink $(pwd)/config/kitty/tokyo-night.conf $usrcfg/kitty/tokyo-night.conf
+
 echo "Done"
