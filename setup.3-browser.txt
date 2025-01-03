@@ -1,0 +1,24 @@
+# yay -S brave-bin
+
+Settings:
+    Appearance:
+        Show home button: Disabled
+        Show bookmarks button: Enabled
+        Show bookmarks: Always
+        Show Brave News button: Disabled
+        Show Leo AI button: Disabled
+        Show Brave Rewards button: Disabled
+        Show Brave Wallet button: Disabled
+        Show Sidebar button: Disabled
+        Show autocomplete suggestions in address bar:
+            Leo AI Assistant: Disabled
+        Show Sidebar: Never
+    Leo:
+        Show Leo icon in the sidebar: Disabled
+        Show Leo in the context menu on websites: Disabled
+
+Extensions:
+    - Widevine: Enabled (DRM required for e.g Crunchyroll)
+    - Bitlocker
+    - Dark Reader
+    - SponsorBlock for YouTube

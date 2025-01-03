@@ -1,0 +1,8 @@
+##### Wooting #####
+## See: https://help.wooting.io/article/147-configuring-device-access-for-wootility-under-linux-udev-rules ##
+
+# yay -S wootility5-beta
+# cp ./udev/70-wooting.rules /etc/udev/rules.d/
+# udevadm control --reload-rules
+# udevadm trigger
+

@@ -1,0 +1,19 @@
+##### Zed #####
+# pacman -S zed
+
+##### Git Credential Manager #####
+
+# pacman -S dotnet-runtime dotnet-sdk
+# dotnet tool install -g git-credential-manager
+# git-credential-manager configure
+# git config --global credential.credentialStore gpg
+# git config --global core.editor vim
+# git config --global user.name "Peter Nilsson"
+# git config --global user.email "peter8nilsson@live.se"
+
+##### Devel Core #####
+# pacman -S cmake ninja
+
+#### Vulkan #####
+# pacman -S vulkan-devel renderdoc
+
