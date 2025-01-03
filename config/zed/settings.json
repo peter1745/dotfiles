@@ -1,0 +1,206 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "theme": "Tokyo Night",
+  "auto_install_extensions": {
+    "csharp": true,
+    "hlsl": true,
+    "neocmake": true,
+    "tokyo-night": true,
+    "toml": true
+  },
+  "features": {
+    "inline_completion_provider": "none"
+  },
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 18,
+  "ui_font_size": 18,
+  "auto_signature_help": true,
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 250
+    }
+  },
+  "project_panel": {
+    "dock": "right",
+    "auto_fold_dirs": false
+  },
+  "lsp": {
+    "clangd": {
+      "binary": {
+        "arguments": [
+          "--function-arg-placeholders=0",
+          "--header-insertion=never"
+        ]
+      }
+    }
+  },
+  "file_types": {
+    "CMake": ["CMakeLists.txt"],
+    "HLSL": ["*.slang"],
+    "C++": [
+      "*.cpp",
+      "*.hpp",
+      "*.inl",
+
+      "algorithm",
+      "any",
+      "array",
+      "atomic",
+      "backward",
+      "barrier",
+      "bit",
+      "bits",
+      "bitset",
+      "cassert",
+      "ccomplex",
+      "cctype",
+      "cerrno",
+      "cfenv",
+      "cfloat",
+      "charconv",
+      "chrono",
+      "cinttypes",
+      "ciso646",
+      "climits",
+      "clocale",
+      "cmath",
+      "codecvt",
+      "compare",
+      "complex",
+      "complex.h",
+      "concepts",
+      "condition_variable",
+      "coroutine",
+      "csetjmp",
+      "csignal",
+      "cstdalign",
+      "cstdarg",
+      "cstdbool",
+      "cstddef",
+      "cstdint",
+      "cstdio",
+      "cstdlib",
+      "cstring",
+      "ctgmath",
+      "ctime",
+      "cuchar",
+      "cwchar",
+      "cwctype",
+      "cxxabi.h",
+      "debug",
+      "decimal",
+      "deque",
+      "exception",
+      "execution",
+      "expected",
+      "experimental",
+      "ext",
+      "fenv.h",
+      "filesystem",
+      "format",
+      "forward_list",
+      "fstream",
+      "functional",
+      "future",
+      "generator",
+      "initializer_list",
+      "iomanip",
+      "ios",
+      "iosfwd",
+      "iostream",
+      "istream",
+      "iterator",
+      "latch",
+      "limits",
+      "list",
+      "locale",
+      "map",
+      "math.h",
+      "memory",
+      "memory_resource",
+      "mutex",
+      "new",
+      "numbers",
+      "numeric",
+      "optional",
+      "ostream",
+      "parallel",
+      "print",
+      "pstl",
+      "queue",
+      "random",
+      "ranges",
+      "ratio",
+      "regex",
+      "scoped_allocator",
+      "semaphore",
+      "set",
+      "shared_mutex",
+      "source_location",
+      "span",
+      "spanstream",
+      "sstream",
+      "stack",
+      "stacktrace",
+      "stdatomic.h",
+      "stdexcept",
+      "stdfloat",
+      "stdlib.h",
+      "stop_token",
+      "streambuf",
+      "string",
+      "string_view",
+      "syncstream",
+      "system_error",
+      "text_encoding",
+      "tgmath.h",
+      "thread",
+      "tr1",
+      "tr2",
+      "tuple",
+      "typeindex",
+      "typeinfo",
+      "type_traits",
+      "unordered_map",
+      "unordered_set",
+      "utility",
+      "valarray",
+      "variant",
+      "vector",
+      "version"
+    ]
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false,
+    "selections_menu": false
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "chat_panel": {
+    "button": false
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "assistant": {
+    "version": "2",
+    "enabled": false,
+    "button": false
+  },
+  "outline_panel": {
+    "button": false
+  },
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": true
+  }
+}
