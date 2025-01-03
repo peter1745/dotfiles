@@ -3,7 +3,7 @@
 set -eo pipefail
 
 GenerateLink() {
-    if [ -e $2 ]
+    if [ -f $2 ]
     then
         #echo "Backing up $2 to $2.bak"
         cp $2 $2.bak
