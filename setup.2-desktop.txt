@@ -1,3 +1,7 @@
+##### Kitty #####
+# pacman -S kitty
+
+##### Brave Browser #####
 # yay -S brave-bin
 
 Settings:
