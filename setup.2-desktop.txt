@@ -26,3 +26,12 @@ Extensions:
     - Bitlocker
     - Dark Reader
     - SponsorBlock for YouTube
+
+##### Fcitx5 (IME for Japanese) #####
+# sudo pacman -S fcitx5 fcitx5-configtool
+# yay -S fcitx5-mozc-ut (Select the mozc-ut flavor when prompted)
+
+Post-Install:
+    Select the Fcitx5 Wayland Launcher from System Settings -> Keyboard -> Virtual Keyboard
+    Log out and back in
+
