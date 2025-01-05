@@ -18,6 +18,7 @@ prompt walters
 alias ls='ls --color=auto'
 alias ll='ls -lah --color=auto'
 alias grep='grep --color=auto'
+alias zed='zeditor'
 
 . "$HOME/.cargo/env"
 
