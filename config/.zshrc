@@ -20,10 +20,9 @@ alias ll='ls -lah --color=auto'
 alias grep='grep --color=auto'
 alias zed='zeditor'
 
-. "$HOME/.cargo/env"
-
 export PATH=$HOME/.local/bin:~/nvidia/NVIDIA-Nsight-Graphics-2024.3/host/linux-desktop-nomad-x64/:~/tools/:$PATH
 export LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
+export XMODIFIERS=@im=fcitx
 
 bindkey "^[[3~" delete-char
 bindkey "^[[1;5C" forward-word

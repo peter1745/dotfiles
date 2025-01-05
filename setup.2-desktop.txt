@@ -4,6 +4,10 @@
 ##### Brave Browser #####
 # yay -S brave-bin
 
+Post-Install (brave://flags):
+    Preferred Ozone Platform: Wayland
+    Wayland text-input-v3: Enabled
+
 Settings:
     Appearance:
         Show home button: Disabled
@@ -23,15 +27,22 @@ Settings:
 
 Extensions:
     - Widevine: Enabled (DRM required for e.g Crunchyroll)
-    - Bitlocker
+    - Bitwarden
     - Dark Reader
     - SponsorBlock for YouTube
 
 ##### Fcitx5 (IME for Japanese) #####
-# sudo pacman -S fcitx5 fcitx5-configtool
-# yay -S fcitx5-mozc-ut (Select the mozc-ut flavor when prompted)
+# sudo pacman -S fcitx5 fcitx5-configtool fcitx5-anthy
 
 Post-Install:
     Select the Fcitx5 Wayland Launcher from System Settings -> Keyboard -> Virtual Keyboard
+    Add the Anthy Input Method under System Settings -> Input Method
+    Enable these flags in Electron apps:
+        --enable-features=UseOzonePlatform
+        --ozone-platform=wayland
+        --enable-wayland-ime
     Log out and back in
+
+##### Discord #####
+# yay -S vesktop-bin
 
