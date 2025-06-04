@@ -67,5 +67,8 @@ GenerateLink $(pwd)/config/zed/settings.json $usrcfg/zed/settings.json
 GenerateLink $(pwd)/config/kitty/kitty.conf $usrcfg/kitty/kitty.conf
 GenerateLink $(pwd)/config/kitty/tokyo-night.conf $usrcfg/kitty/tokyo-night.conf
 
+# Oh My Zsh
+GenerateLink $(pwd)/config/oh-my-zsh/custom/ $HOME/.oh-my-zsh/custom
+
 echo ""
 echo "Done. $new_links new links. $skipped skipped. $backups backups."

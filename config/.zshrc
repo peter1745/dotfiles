@@ -13,14 +13,18 @@ compinit
 promptinit
 # End of lines added by compinstall
 
+ZSH_THEME="nebirhos"
+
 prompt walters
+
+source /etc/profile.d/debuginfod.sh
 
 alias ls='ls --color=auto'
 alias ll='ls -lah --color=auto'
 alias grep='grep --color=auto'
 alias zed='zeditor'
 
-export PATH=$HOME/.local/bin:~/nvidia/NVIDIA-Nsight-Graphics-2024.3/host/linux-desktop-nomad-x64/:~/tools/:$PATH
+export PATH=$HOME/.dotnet/tools:$HOME/.local/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
 export XMODIFIERS=@im=fcitx
 
