@@ -53,6 +53,11 @@ GenerateLink $(pwd)/config/.vimrc $HOME/.vimrc
 GenerateLink $(pwd)/config/hypr/hyprland.conf $usrcfg/hypr/hyprland.conf
 GenerateLink $(pwd)/config/hypr/hyprpaper.conf $usrcfg/hypr/hyprpaper.conf
 
+# Waybar
+GenerateLink $(pwd)/config/waybar/config.jsonc $usrcfg/waybar/config.jsonc
+GenerateLink $(pwd)/config/waybar/style.css $usrcfg/waybar/style.css
+GenerateLink $(pwd)/config/waybar/menus/ $usrcfg/waybar/menus
+
 # Zed
 GenerateLink $(pwd)/config/zed/keymap.json $usrcfg/zed/keymap.json
 GenerateLink $(pwd)/config/zed/settings.json $usrcfg/zed/settings.json
