@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -eo pipefail
 
@@ -44,6 +44,7 @@ usrcfg=$HOME/.config
 
 cd "$(dirname "$0")"
 echo "Setting up dotfiles from: $(pwd)"
+echo ""
 
 # System
 GenerateLink $(pwd)/config/.zshrc $HOME/.zshrc
