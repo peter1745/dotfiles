@@ -15,20 +15,29 @@
     "tokyo-night": true,
     "toml": true
   },
+  "minimap": {
+    "show": "always"
+  },
+  "scrollbar": {
+    "show": "never"
+  },
+  "debuggers": [
+    "gdb"
+  ],
   "features": {
-    "inline_completion_provider": "none"
+    "edit_prediction_provider": "none"
   },
   "buffer_font_family": "JetBrains Mono",
-  "buffer_font_size": 18,
+  "buffer_font_size": 16,
   "ui_font_size": 18,
   "auto_signature_help": true,
-  "autosave": {
-    "after_delay": {
-      "milliseconds": 250
-    }
-  },
+  //"autosave": {
+  //  "after_delay": {
+  //    "milliseconds": 250
+  //  }
+  //},
   "project_panel": {
-    "dock": "right",
+    "dock": "left",
     "auto_fold_dirs": false
   },
   "lsp": {
@@ -186,12 +195,12 @@
     "button": false
   },
   "chat_panel": {
-    "button": false
+    "button": "never"
   },
   "notification_panel": {
     "button": false
   },
-  "assistant": {
+  "agent": {
     "version": "2",
     "enabled": false,
     "button": false
