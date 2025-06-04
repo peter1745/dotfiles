@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 set -eo pipefail
 
@@ -24,6 +24,10 @@ echo "Setting up dotfiles from: $(pwd)"
 # System
 GenerateLink $(pwd)/config/.zshrc $HOME/.zshrc
 GenerateLink $(pwd)/config/.vimrc $HOME/.vimrc
+
+# Hyprland
+GenerateLink $(pwd)/config/hypr/hyprland.conf $usrcfg/hypr/hyprland.conf
+GenerateLink $(pwd)/config/hypr/hyprpaper.conf $usrcfg/hypr/hyprpaper.conf
 
 # Zed
 GenerateLink $(pwd)/config/zed/keymap.json $usrcfg/zed/keymap.json
