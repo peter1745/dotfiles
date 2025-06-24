@@ -66,6 +66,7 @@ GenerateLink $(pwd)/config/zed/settings.json $usrcfg/zed/settings.json
 # Kitty
 GenerateLink $(pwd)/config/kitty/kitty.conf $usrcfg/kitty/kitty.conf
 GenerateLink $(pwd)/config/kitty/tokyo-night.conf $usrcfg/kitty/tokyo-night.conf
+GenerateLink $(pwd)/config/kitty/themes/ $usrcfg/kitty/themes
 
 # Oh My Zsh
 GenerateLink $(pwd)/config/oh-my-zsh/custom/ $HOME/.oh-my-zsh/custom
