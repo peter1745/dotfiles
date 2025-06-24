@@ -4,8 +4,14 @@
 }
 
 menu {
-    background-color: #191429;
+    background-color: rgba(40, 40, 40, 0.6);
     color: #d4d4d4;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+
+menu > * {
+    padding: 5px;
 }
 
 window#waybar {
@@ -17,10 +23,11 @@ window#waybar {
 
 #custom-power {
     font-size: 32px;
-}
-
-#custom-power:hover {
-    color: aqua;
+ 
+    /* Invisble borders to prevent size changing on hover */
+    border-top: 1px solid rgba(0, 0, 0, 0);
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    border-right: 1px solid rgba(0, 0, 0, 0);
 }
 
 #bluetooth {
@@ -43,23 +50,44 @@ window#waybar {
 .modules-right #tray {
     border-left: 1px solid #888;
     border-right: 1px solid #888;
-    margin: 10px 5px 10px 5px;
+    margin: 10px 0px 10px 5px;
 }
 
 .modules-right > widget > *:first-child {
     margin: 0 5px;
 }
 
-#workspaces button {
-    padding: 0 5px;
+#custom-power {
+    margin: 0 0;
+}
+
+#workspaces button,
+#custom-power {
+    padding: 0 10px;
 
     color: #d4d4d4;
-    box-shadow: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
     border-radius: 0;
 
     /* Disable animations */
     animation: unset;
     transition: unset;
+}
+
+#workspaces button {
+    border-top: 1px solid rgba(0, 0, 0, 0);
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    border-left: 1px solid rgba(0, 0, 0, 0);
+}
+
+#workspaces button:hover,
+#custom-power:hover {
+    background: rgba(60, 60, 60, 0.8);
+    border: unset;
+    border-left: 1px solid rgba(0, 0, 0, 0);
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
 }
 
 #workspaces button.active:first-child,
@@ -68,19 +96,17 @@ window#waybar {
     border-left: 1px solid #fff;
 }
 
-#workspaces button:hover {
-    background: rgba(60, 60, 60, 0.8);
-    border: unset;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    text-shadow: unset;
+#custom-power:hover {
+    border-radius: 0 4px 4px 0;
+    border-right: 1px solid #fff;
 }
 
 #workspaces button.active {
-    background-color: rgba(60, 60, 60, 0.8);
+    background: rgba(60, 60, 60, 0.8);
     color: #e3e3e3;
     font-weight: 800;
     border: unset;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
 }
+
