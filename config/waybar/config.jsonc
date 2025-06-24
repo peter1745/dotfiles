@@ -1,42 +1,16 @@
+[{
+    // Primary Monitor
+    "layer": "bottom",
+    "position": "top",
+    "output": "DP-1",
+    "width": 2530,
+    "include": "~/.config/waybar/common.jsonc"
+},
 {
-  "layer": "bottom",
-  "position": "top",
-  "output": ["HDMI-A-1", "DP-1"],
-  "width": "100%",
-  "spacing": 2,
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock"],
-  "modules-right": ["bluetooth", "tray", "custom/power"],
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-  },
-  "hyprland/workspaces": {
-    "persistent-workspaces": {
-      "DP-1": [1, 2, 3, 4, 5],
-      "HDMI-A-1": [6, 7, 8, 9, 10],
-    },
-  },
-  "clock": {
-    "tooltip": true,
-    "tooltip-format": "{:%d/%m/%Y}",
-  },
-  "bluetooth": {
-    "format-connected": " {device_alias}",
-    "format-no-controller": "",
-    "format-on": "",
-    "on-click": "blueman-manager",
-  },
-  "tray": {
-    "icon-size": 28,
-  },
-  "custom/power": {
-    "format": "⏻ ",
-    "tooltip": false,
-    "menu": "on-click",
-    "menu-file": "~/.config/waybar/menus/power.xml",
-    "menu-actions": {
-      "shutdown": "systemctl poweroff",
-    },
-  },
-  "include": "/etc/xdg/waybar/config.jsonc",
-}
+    // Right Monitor
+    "layer": "bottom",
+    "position": "top",
+    "output": "HDMI-A-1",
+    "width": 1890,
+    "include": "~/.config/waybar/common.jsonc"
+}]
