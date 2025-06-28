@@ -68,6 +68,9 @@ GenerateLink $(pwd)/config/kitty/kitty.conf $usrcfg/kitty/kitty.conf
 GenerateLink $(pwd)/config/kitty/tokyo-night.conf $usrcfg/kitty/tokyo-night.conf
 GenerateLink $(pwd)/config/kitty/themes/ $usrcfg/kitty/themes
 
+# Wofi
+GenerateLink $(pwd)/config/wofi/ $usrcfg/wofi
+
 # Oh My Zsh
 GenerateLink $(pwd)/config/oh-my-zsh/custom/ $HOME/.oh-my-zsh/custom
 
