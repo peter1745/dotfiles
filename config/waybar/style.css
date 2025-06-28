@@ -90,7 +90,7 @@ window#waybar {
     border-bottom: 1px solid #fff;
 }
 
-#workspaces button.active:first-child,
+#workspaces button.visible:first-child,
 #workspaces button:hover:first-child {
     border-radius: 4px 0 0 4px;
     border-left: 1px solid #fff;
@@ -101,7 +101,7 @@ window#waybar {
     border-right: 1px solid #fff;
 }
 
-#workspaces button.active {
+#workspaces button.visible {
     background: rgba(60, 60, 60, 0.8);
     color: #e3e3e3;
     font-weight: 800;
