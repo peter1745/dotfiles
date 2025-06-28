@@ -5,7 +5,7 @@ CONFIG_FILES="$HOME/.config/waybar/config.jsonc $HOME/.config/waybar/common.json
 trap "killall waybar" EXIT
 
 while true; do
-    TZ=UTC waybar &
+    waybar &
     inotifywait -e create,modify $CONFIG_FILES
     killall waybar
 done
