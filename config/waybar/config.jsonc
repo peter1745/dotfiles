@@ -1,16 +1,28 @@
-[{
+[
+  {
     // Primary Monitor
-    "layer": "bottom",
-    "position": "top",
     "output": "DP-1",
-    "width": 2530,
-    "include": "~/.config/waybar/common.jsonc"
-},
-{
-    // Right Monitor
-    "layer": "bottom",
     "position": "top",
+    "layer": "overlay",
+    "exclusive": false,
+    "width": 2550,
+    "start_hidden": true,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["bluetooth", "tray", "custom/power"],
+    "include": "~/.config/waybar/common.jsonc",
+  },
+  {
+    // Right Monitor
     "output": "HDMI-A-1",
-    "width": 1890,
-    "include": "~/.config/waybar/common.jsonc"
-}]
+    "position": "top",
+    "layer": "overlay",
+    "exclusive": false,
+    "width": 1910,
+    "start_hidden": true,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["custom/music", "bluetooth", "tray", "custom/power"],
+    "include": "~/.config/waybar/common.jsonc",
+  },
+]

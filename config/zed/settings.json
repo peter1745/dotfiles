@@ -28,7 +28,8 @@
   "buffer_font_family": "JetBrains Mono",
   "buffer_font_size": 16,
   "ui_font_size": 18,
-  "auto_signature_help": true,
+  "auto_signature_help": false,
+  "show_signature_help_after_edits": true,
   "autosave": {
     "after_delay": {
       "milliseconds": 250

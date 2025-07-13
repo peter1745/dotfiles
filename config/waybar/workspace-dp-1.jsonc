@@ -1,0 +1,15 @@
+[
+  {
+    "output": "DP-1",
+    "position": "top",
+    "layer": "overlay",
+    "name": "workspaces-bar",
+    "exclusive": false,
+    "start_hidden": true,
+    "height": 40,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": [],
+    "modules-right": [],
+    "include": "~/.config/waybar/common.jsonc",
+  },
+]

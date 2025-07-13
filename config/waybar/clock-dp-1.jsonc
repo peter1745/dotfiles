@@ -1,0 +1,14 @@
+[
+  {
+    "output": "DP-1",
+    "position": "top",
+    "layer": "overlay",
+    "name": "clock-bar",
+    "exclusive": false,
+    "start_hidden": true,
+    "modules-left": [],
+    "modules-center": ["clock"],
+    "modules-right": [],
+    "include": "~/.config/waybar/common.jsonc",
+  },
+]

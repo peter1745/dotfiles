@@ -1,0 +1,14 @@
+[
+  {
+    "output": "DP-1",
+    "position": "top",
+    "layer": "overlay",
+    "name": "tray-bar",
+    "exclusive": false,
+    "start_hidden": true,
+    "modules-left": [],
+    "modules-center": [],
+    "modules-right": ["bluetooth", "tray", "custom/power"],
+    "include": "~/.config/waybar/common.jsonc",
+  },
+]

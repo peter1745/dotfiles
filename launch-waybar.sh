@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-CONFIG_FILES="$HOME/.config/waybar/config.jsonc $HOME/.config/waybar/common.jsonc $HOME/.config/waybar/style.css"
-
-trap "killall waybar" EXIT
-
-while true; do
-    waybar &
-    inotifywait -e create,modify $CONFIG_FILES
-    killall waybar
-done
+$HOME/.dotfiles/launch-single-waybar.sh waybar-workspace-dp-1 $HOME/.config/waybar/workspace-dp-1.jsonc &
+$HOME/.dotfiles/launch-single-waybar.sh waybar-clock-dp-1 $HOME/.config/waybar/clock-dp-1.jsonc &
+$HOME/.dotfiles/launch-single-waybar.sh waybar-tray-dp-1 $HOME/.config/waybar/tray-dp-1.jsonc &
