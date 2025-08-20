@@ -22,8 +22,8 @@ source /etc/profile.d/debuginfod.sh
 
 #fcitx5
 export XMODIFIERS=@im=fcitx
-export QT_IM_MODULE=fcitx
-export GTK_IM_MODULE=fcitx
+#export QT_IM_MODULE=fcitx
+#export GTK_IM_MODULE=fcitx
 
 alias zed='zeditor'
 
