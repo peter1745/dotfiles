@@ -13,5 +13,17 @@
       "alt-m": "outline::Toggle",
       "ctrl-b": "editor::GoToDefinition"
     }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-alt-0": null
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-alt-/": null
+    }
   }
 ]
