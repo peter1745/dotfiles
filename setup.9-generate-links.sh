@@ -70,7 +70,7 @@ GenerateLink $(pwd)/config/kitty/themes/ $usrcfg/kitty/themes
 GenerateLink $(pwd)/config/wofi/ $usrcfg/wofi
 
 # Oh My Zsh
-GenerateLink $(pwd)/config/oh-my-zsh/custom/ $HOME/.oh-my-zsh/custom
+#GenerateLink $(pwd)/config/oh-my-zsh/custom/ $HOME/.oh-my-zsh/custom
 
 echo ""
 echo "Done. $new_links new links. $skipped skipped. $backups backups."

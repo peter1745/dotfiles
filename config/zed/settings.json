@@ -7,7 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "theme": "Tokyo Night",
+  "theme": "One Dark Pro",
   "auto_install_extensions": {
     "csharp": true,
     "hlsl": true,
@@ -15,11 +15,11 @@
     "tokyo-night": true,
     "toml": true
   },
-  "minimap": {
-    "show": "always"
+  "git": {
+    "git_gutter": "hide"
   },
   "scrollbar": {
-    "show": "never"
+    "show": "auto"
   },
   "debuggers": ["gdb"],
   "features": {
@@ -41,6 +41,19 @@
   },
   "languages": {
     "CMake": {
+      "enable_language_server": false,
+      "format_on_save": "off"
+    },
+    "C": {
+      "format_on_save": "off"
+    },
+    "HTML": {
+      "format_on_save": "off"
+    },
+    "Slang": {
+      "format_on_save": "off"
+    },
+    "GLSL": {
       "format_on_save": "off"
     }
   },
@@ -57,6 +70,7 @@
   "file_types": {
     "CMake": ["CMakeLists.txt"],
     "HLSL": ["*.slang"],
+    "C": ["*.c", "*.h"],
     "C++": [
       "*.cpp",
       "*.hpp",
@@ -205,7 +219,6 @@
     "button": false
   },
   "agent": {
-    "version": "2",
     "enabled": false,
     "button": false
   },

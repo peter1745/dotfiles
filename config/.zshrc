@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-export PATH=$HOME/.dotnet/tools:$HOME/.local/bin:$PATH
-
+export PATH="$HOME/.dotnet/tools:$HOME/.local/bin:$HOME/.local/share/gem/ruby/3.4.0/bin:$HOME/.gem/ruby/3.4.0/bin:$HOME/dev/FontBMSharp/FontBMSharp/bin/Release/net8.0/:$HOME/.cargo/bin/:$PATH"
+export GEM_HOME=$HOME/.gem
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -19,6 +19,7 @@ promptinit
 prompt walters
 
 source /etc/profile.d/debuginfod.sh
+source .profile
 
 #fcitx5
 export XMODIFIERS=@im=fcitx

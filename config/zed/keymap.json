@@ -17,13 +17,25 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-alt-0": null
+      "ctrl-alt-0": null,
+      "ctrl-shift-b": [ "task::Spawn", { "task_name": "Build Shaders" } ]
     }
   },
   {
     "context": "AgentPanel",
     "bindings": {
       "ctrl-alt-/": null
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-*": [
+        "editor::ToggleComments",
+        {
+          "advance_downwards": false
+        }
+      ]
     }
   }
 ]
