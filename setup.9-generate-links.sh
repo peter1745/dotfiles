@@ -69,6 +69,8 @@ GenerateLink $(pwd)/config/kitty/themes/ $usrcfg/kitty/themes
 # Wofi
 GenerateLink $(pwd)/config/wofi/ $usrcfg/wofi
 
+GenerateLink $(pwd)/config/nvim/ $usrcfg/nvim
+
 # Oh My Zsh
 #GenerateLink $(pwd)/config/oh-my-zsh/custom/ $HOME/.oh-my-zsh/custom
 
