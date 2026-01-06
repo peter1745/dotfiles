@@ -10,6 +10,9 @@ map("n", "<C-A-Left>", "<cmd>tabprevious<CR>", { desc = "Previous Tab" })
 
 map({ "n", "i" }, "<C-b>", "<cmd>make<CR>", { desc = "Build Project" })
 
+map({ "n", "i" }, "<F12>", vim.lsp.buf.definition, { desc = "Go to Definition" })
+map({ "n", "i" }, "<F2>", vim.lsp.buf.rename, { desc = "Rename Symbol" })
+
 -- Telescope Bindings
 local telescope = require("telescope.builtin")
 map("n", "<C-o>", function()
