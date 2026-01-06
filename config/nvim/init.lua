@@ -18,7 +18,8 @@ vim.api.nvim_create_autocmd("CursorHold", {
         vim.lsp.buf.signature_help({
             silent = true,
             max_width  = 80,
-            max_height = 5
+            max_height = 5,
+            focusable = false
         })
     end
 })
