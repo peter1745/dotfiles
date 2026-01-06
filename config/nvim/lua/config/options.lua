@@ -1,11 +1,13 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.showmatch = true
+vim.opt.showmatch = true                    -- Highlight matching brackets
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-vim.opt.wrap = false
-vim.autowrite = true
+vim.opt.wrap = false                        -- Don't wrap lines when they go off-screen
+vim.opt.autowrite = true                    -- Save buffers when running e.g :make
+vim.opt.incsearch = true                    -- Highlight search matches as you type
+vim.opt.switchbuf = "useopen,usetab,newtab" -- Use existing tab / file for showing e.g compile errors
 
 -- Ensure we treat .h files as C files and not C++ files (otherwise treesitter will be upset)
 vim.cmd([[
