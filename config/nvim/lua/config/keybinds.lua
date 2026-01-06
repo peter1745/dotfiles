@@ -12,7 +12,11 @@ map({ "n", "i" }, "<C-b>", "<cmd>make<CR>", { desc = "Build Project" })
 
 -- Telescope Bindings
 local telescope = require("telescope.builtin")
-map("n", "<C-o>", telescope.find_files, { desc = "Find Files" })
+map("n", "<C-o>", function()
+    telescope.find_files({
+        modifiable = true
+    })
+end, { desc = "Find Files" })
 map("n", "<C-m>", telescope.man_pages, { desc = "Find Files" })
 map("n", "<A-m>", telescope.lsp_document_symbols, { desc = "List Symbols" })
 
