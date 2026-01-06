@@ -16,7 +16,7 @@ return {
 			require("nvim-treesitter").setup({
 				highlight = { enabled = true },
 				indent = { enabled = true },
-				ensure_installed = { "c" },
+				ensure_installed = { "c", "lua" },
 				auto_install = true
 			})
 		end
@@ -38,5 +38,5 @@ return {
             -- optional but recommended
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
         }
-    }
+    },
 }

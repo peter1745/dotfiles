@@ -1,7 +1,7 @@
 require("config.lazy")
 require("config.options")
 require("config.keybinds")
-require("nvim-treesitter").install({ "c" })
+require("nvim-treesitter").install({ "c", "lua" })
 
 -- Disables auto-insertion when any letter is typed (stupid..)
 vim.cmd[[set completeopt+=menuone,noselect,popup]]
@@ -60,5 +60,29 @@ vim.lsp.config("clangd", {
     filetypes = { "c", "h", "cpp", "hpp" }
 })
 
+vim.lsp.config("lua_ls", {
+    on_init = function(client)
+        client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
+            runtime = {
+                version = "LuaJIT",
+                path = {
+                    "lua/?.lua",
+                    "lua/?/init.lua"
+                }
+            },
+            workspace = {
+                checkThirdParty = false,
+                library = {
+                    vim.env.VIMRUNTIME
+                }
+            }
+        })
+    end,
+    settings = {
+        Lua = {}
+    }
+})
+
 vim.lsp.enable("clangd")
+vim.lsp.enable("lua_ls")
 
