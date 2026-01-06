@@ -55,5 +55,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 })
 
+vim.lsp.config("clangd", {
+    filetypes = { "c", "h", "cpp", "hpp" }
+})
+
 vim.lsp.enable("clangd")
 
