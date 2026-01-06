@@ -8,6 +8,7 @@ vim.opt.wrap = false                        -- Don't wrap lines when they go off
 vim.opt.autowrite = true                    -- Save buffers when running e.g :make
 vim.opt.incsearch = true                    -- Highlight search matches as you type
 vim.opt.switchbuf = "useopen,usetab,newtab" -- Use existing tab / file for showing e.g compile errors
+vim.opt.scrolloff = 16;                     -- Ensures there are at least 16 lines above and below the caret (keeps it more centered)
 
 -- Ensure we treat .h files as C files and not C++ files (otherwise treesitter will be upset)
 vim.cmd([[
