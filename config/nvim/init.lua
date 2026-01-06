@@ -24,6 +24,17 @@ vim.api.nvim_create_autocmd("CursorHold", {
     end
 })
 
+
+-- Header switcher inspired by Ouroboros (which seems to be unmaintained and broken)
+local header_switcher = require("config.header_switcher")
+vim.api.nvim_create_autocmd("FileType", {
+    group = autocmd_group,
+    pattern = "c,cpp",
+    callback = function(args)
+        vim.keymap.set({ "n", "i" }, "<C-e>", header_switcher.switch, { buffer = args.buf })
+    end
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
     group = autocmd_group,
     callback = function(args)
