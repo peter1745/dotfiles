@@ -8,6 +8,8 @@ map("n", "<C-q>", "<cmd>tabclose<CR>", { desc = "Close Current Tab" })
 map("n", "<C-A-Right>", "<cmd>tabnext<CR>", { desc = "Next Tab" })
 map("n", "<C-A-Left>", "<cmd>tabprevious<CR>", { desc = "Previous Tab" })
 
+map({ "n", "i" }, "<C-b>", "<cmd>make<CR>", { desc = "Build Project" })
+
 -- Telescope Bindings
 local telescope = require("telescope.builtin")
 map("n", "<C-o>", telescope.find_files, { desc = "Find Files" })
