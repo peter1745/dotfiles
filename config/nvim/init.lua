@@ -24,7 +24,7 @@ local autocmd_group = vim.api.nvim_create_augroup("my.lsp", {})
 vim.opt.updatetime = 250
 
 -- Automatically show signature help when you pause over a function for long enough
-vim.api.nvim_create_autocmd("CursorHold", {
+vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
     group = autocmd_group,
     callback = function(args)
         vim.lsp.buf.signature_help({
