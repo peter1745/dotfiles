@@ -4,10 +4,19 @@ require("config.keybinds")
 require("nvim-treesitter").install({ "c", "lua" })
 require("telescope").setup({
     pickers = {
+        find_files = {
+            mappings = {
+                i = {
+                    ["<CR>"] = function(bufnr)
+                        require("telescope.actions.set").edit(bufnr, "tab drop")
+                    end
+                },
+            },
+        },
         man_pages = {
             mappings = {
                 i = {
-                    ['<CR>'] = 'select_vertical',
+                    ["<CR>"] = "select_vertical",
                 },
             },
         }
