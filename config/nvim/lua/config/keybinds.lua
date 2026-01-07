@@ -29,7 +29,11 @@ map("n", "<C-o>", function()
         modifiable = true
     })    
 end, { desc = "Find Files" })
-map("n", "<C-m>", telescope.man_pages, { desc = "Find Files" })
+map("n", "<C-m>", function()
+    telescope.man_pages({
+        sections = { "3", "3G" }
+    })
+end, { desc = "Find Files" })
 map("n", "<A-m>", telescope.lsp_document_symbols, { desc = "List Symbols" })
 
 local use_live_grep = false

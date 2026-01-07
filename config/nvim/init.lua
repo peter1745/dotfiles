@@ -2,6 +2,18 @@ require("config.lazy")
 require("config.options")
 require("config.keybinds")
 require("nvim-treesitter").install({ "c", "lua" })
+require("telescope").setup({
+    pickers = {
+        man_pages = {
+            mappings = {
+                i = {
+                    ['<CR>'] = 'select_vertical',
+                },
+            },
+        }
+    }
+})
+require("telescope").load_extension("fzf")
 
 -- Disables auto-insertion when any letter is typed (stupid..)
 vim.cmd[[set completeopt+=menuone,noselect,popup]]
