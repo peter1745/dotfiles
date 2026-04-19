@@ -10,10 +10,12 @@ vim.opt.incsearch = true                    -- Highlight search matches as you t
 vim.opt.switchbuf = "useopen,usetab,newtab" -- Use existing tab / file for showing e.g compile errors
 vim.opt.scrolloff = 16;                     -- Ensures there are at least 16 lines above and below the caret (keeps it more centered)
 vim.opt.splitright = true
+vim.opt.cursorline = true
 
 -- Ensure we treat .h files as C files and not C++ files (otherwise treesitter will be upset)
 vim.cmd([[
     let g:c_syntax_for_h=1
     autocmd BufNewFile,BufRead *.h setlocal filetype=c
+    autocmd BufNewFile,BufRead *.hinc setlocal filetype=c
 ]])
 

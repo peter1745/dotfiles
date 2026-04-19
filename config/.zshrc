@@ -1,7 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-export PATH="$HOME/.dotnet/tools:$HOME/.local/bin:$HOME/.local/share/gem/ruby/3.4.0/bin:$HOME/.gem/ruby/3.4.0/bin:$HOME/dev/FontBMSharp/FontBMSharp/bin/Release/net8.0/:$HOME/.cargo/bin/:$PATH"
+export PATH="$HOME/.dotnet/tools:$HOME/.local/bin:$HOME/.local/share/gem/ruby/3.4.0/bin:$HOME/.gem/ruby/3.4.0/bin:$HOME/dev/FontBMSharp/FontBMSharp/bin/Release/net8.0/:$HOME/.cargo/bin/:$HOME/Downloads/gf/:$HOME/go/bin/:$PATH"
+export HYTALESERVER_JAR_PATH="$HOME/.var/app/com.hypixel.HytaleLauncher/data/Hytale/install/release/package/game/latest/Server/HytaleServer.jar"
 export GEM_HOME=$HOME/.gem
 
 HISTFILE=~/.histfile

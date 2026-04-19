@@ -8,8 +8,14 @@ map({ "n", "i" }, "<C-q>",       "<cmd>tabclose<CR>",    { desc = "Close Current
 map({ "n", "i" }, "<C-A-Right>", "<cmd>tabnext<CR>",     { desc = "Next Tab" })
 map({ "n", "i" }, "<C-A-Left>",  "<cmd>tabprevious<CR>", { desc = "Previous Tab" })
 
+map({ "n", "i" }, "<C-n>", "<cmd>tabnew | Ex<CR>");
+
 map({ "n", "i" }, "<C-b>", "<cmd>make<CR>",         { desc = "Build Project" })
-map({ "n", "i" }, "<F12>", vim.lsp.buf.definition,  { desc = "Go to Definition" })
+map({ "n", "i" }, "<F12>", function()
+    vim.lsp.buf.definition({
+        reuse_win = true
+    })
+end,  { desc = "Go to Definition" })
 map({ "n", "i" }, "<F2>",  vim.lsp.buf.rename,      { desc = "Rename Symbol" })
 
 -- Handle Split Navigation
@@ -27,7 +33,7 @@ local telescope = require("telescope.builtin")
 map("n", "<C-o>", function()
     telescope.find_files({
         modifiable = true
-    })    
+    })
 end, { desc = "Find Files" })
 map("n", "<C-m>", function()
     telescope.man_pages({

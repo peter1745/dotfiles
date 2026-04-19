@@ -1,7 +1,7 @@
 require("config.lazy")
 require("config.options")
 require("config.keybinds")
-require("nvim-treesitter").install({ "c", "lua" })
+require("nvim-treesitter").install({ "c", "cpp", "lua", "ebnf", "rust" })
 require("telescope").setup({
     pickers = {
         find_files = {
@@ -23,9 +23,56 @@ require("telescope").setup({
     }
 })
 require("telescope").load_extension("fzf")
+require("catppuccin").setup({
+	flavour = "mocha",
+	auto_integrations = true
+})
+require("lualine").setup()
+
+vim.cmd.colorscheme("catppuccin")
+
+vim.filetype.add{ extension = { ebnf = 'ebnf' } }
+vim.api.nvim_set_hl(0, '@string.special.grammar', { link = '@string.regex' })
+vim.api.nvim_set_hl(0, '@variable.grammar.pascal', { link = '@type' })
+vim.api.nvim_set_hl(0, '@variable.grammar.camel', { link = '@property' })
+vim.api.nvim_set_hl(0, '@variable.grammar.upper', { link = '@constant' })
+vim.api.nvim_set_hl(0, '@variable.grammar.lower', { link = '@parameter' })
 
 -- Disables auto-insertion when any letter is typed (stupid..)
-vim.cmd[[set completeopt+=menuone,noselect,popup]]
+vim.cmd([[set completeopt+=menuone,noselect,popup]])
+
+vim.lsp.config("clangd", {
+	cmd = {
+		"clangd",
+		"--header-insertion=never",
+		"--background-index",
+		"--completion-style=detailed",
+	},
+    filetypes = { "c", "h", "cpp", "hpp" },
+})
+
+vim.lsp.config("lua_ls", {
+    on_init = function(client)
+        client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
+            runtime = {
+                version = "LuaJIT",
+                path = {
+                    "lua/?.lua",
+                    "lua/?/init.lua"
+                }
+            },
+            workspace = {
+                checkThirdParty = false,
+                library = {
+                    vim.env.VIMRUNTIME
+                }
+            }
+        })
+    end,
+    settings = {
+        Lua = {}
+    }
+})
 
 local autocmd_group = vim.api.nvim_create_augroup("my.lsp", {})
 
@@ -44,7 +91,6 @@ vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
         })
     end
 })
-
 
 -- Header switcher inspired by Ouroboros (which seems to be unmaintained and broken)
 local header_switcher = require("config.header_switcher")
@@ -88,33 +134,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 })
 
-vim.lsp.config("clangd", {
-    filetypes = { "c", "h", "cpp", "hpp" }
-})
-
-vim.lsp.config("lua_ls", {
-    on_init = function(client)
-        client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
-            runtime = {
-                version = "LuaJIT",
-                path = {
-                    "lua/?.lua",
-                    "lua/?/init.lua"
-                }
-            },
-            workspace = {
-                checkThirdParty = false,
-                library = {
-                    vim.env.VIMRUNTIME
-                }
-            }
-        })
-    end,
-    settings = {
-        Lua = {}
-    }
-})
-
 vim.lsp.enable("clangd")
+vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("lua_ls")
 
