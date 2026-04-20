@@ -50,6 +50,9 @@ echo ""
 #GenerateLink $(pwd)/config/.zshrc $HOME/.zshrc
 #GenerateLink $(pwd)/config/.vimrc $HOME/.vimrc
 
+# Niri
+GenerateLink $(pwd)/config/niri/ $usrcfg/niri
+
 # Waybar
 GenerateLink $(pwd)/config/waybar/ $usrcfg/waybar
 
