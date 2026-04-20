@@ -1,0 +1,2 @@
+Mount 4TB games drive to /games, generate fstab file and ensure that drive has these options:
+    rw,relatime,auto,user,exec
