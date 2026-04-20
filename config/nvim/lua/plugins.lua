@@ -77,11 +77,14 @@ return {
         end
     },
     {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install"
+    },
+    {
         "nvim-telescope/telescope.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
             -- optional but recommended
-            { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         }
     },
     {

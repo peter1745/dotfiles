@@ -47,29 +47,17 @@ echo "Setting up dotfiles from: $(pwd)"
 echo ""
 
 # System
-GenerateLink $(pwd)/config/.zshrc $HOME/.zshrc
-GenerateLink $(pwd)/config/.vimrc $HOME/.vimrc
-
-# Hyprland
-GenerateLink $(pwd)/config/hypr/hyprland.conf $usrcfg/hypr/hyprland.conf
-GenerateLink $(pwd)/config/hypr/hyprpaper.conf $usrcfg/hypr/hyprpaper.conf
+#GenerateLink $(pwd)/config/.zshrc $HOME/.zshrc
+#GenerateLink $(pwd)/config/.vimrc $HOME/.vimrc
 
 # Waybar
 GenerateLink $(pwd)/config/waybar/ $usrcfg/waybar
 
-# Zed
-GenerateLink $(pwd)/config/zed/keymap.json $usrcfg/zed/keymap.json
-GenerateLink $(pwd)/config/zed/settings.json $usrcfg/zed/settings.json
+# Neovim
+GenerateLink $(pwd)/config/nvim/ $usrcfg/nvim
 
 # Kitty
-GenerateLink $(pwd)/config/kitty/kitty.conf $usrcfg/kitty/kitty.conf
-GenerateLink $(pwd)/config/kitty/tokyo-night.conf $usrcfg/kitty/tokyo-night.conf
-GenerateLink $(pwd)/config/kitty/themes/ $usrcfg/kitty/themes
-
-# Wofi
-GenerateLink $(pwd)/config/wofi/ $usrcfg/wofi
-
-GenerateLink $(pwd)/config/nvim/ $usrcfg/nvim
+GenerateLink $(pwd)/config/kitty/ $usrcfg/kitty
 
 # Oh My Zsh
 #GenerateLink $(pwd)/config/oh-my-zsh/custom/ $HOME/.oh-my-zsh/custom

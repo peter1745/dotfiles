@@ -1,140 +1,72 @@
 * {
-    font-family: "JetBrains Mono", "Font Awesome 6 Free";
+    font-family: "Noto Sans";
     padding: 0;
     margin: 0;
-}
-
-menu {
-    background-color: rgba(40, 40, 40, 0.6);
-    color: #d4d4d4;
-    border: 1px solid #fff;
-    border-radius: 4px;
-}
-
-menu > * {
-    padding: 5px;
+    color: #d3d9ed;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0);
-    color: #d4d4d4;
-}
-
-.workspaces-bar .modules-left {
-    background-color: rgba(40, 40, 40, 1);
-    border: 1px solid #fff;
-    border-radius: 4px;
-    margin-left: 10px;
-}
-
-.clock-bar .modules-center {
-    background-color: rgba(40, 40, 40, 1);
-    border: 1px solid #fff;
-    border-radius: 4px;
-    margin-left: 10px;
-    padding: 8px;
-}
-
-.tray-bar .modules-right {
-    background-color: rgba(40, 40, 40, 1);
-    border: 1px solid #fff;
-    border-radius: 4px;
-    margin-right: 10px;
-}
-
-#custom-power {
-    font-size: 32px;
-
-    /* Invisble borders to prevent size changing on hover */
-    border-top: 1px solid rgba(0, 0, 0, 0);
-    border-bottom: 1px solid rgba(0, 0, 0, 0);
-    border-right: 1px solid rgba(0, 0, 0, 0);
-}
-
-#custom-music {
-    font-size: 1.1em;
-    padding: 0 10px;
-    border-right: 1px solid #888;
-    margin: 10px 0px 10px 5px;
-}
-
-#bluetooth {
-    font-size: 1.4em;
-    margin-left: 10px;
-}
-
-#clock {
+    background-color: #1e1e2e;
     font-size: 1.2em;
 }
 
-/* Put some distance between the first tray icon and the border */
-.modules-right #tray > widget:first-child image {
-    padding-left: 10px;
-}
-
-.modules-right #tray > widget:last-child image {
-    padding-right: 10px;
-}
-
-.modules-right #tray {
-    border-left: 1px solid #888;
-    border-right: 1px solid #888;
-    margin: 10px 0px 10px 5px;
-}
-
-.modules-right > widget > *:first-child {
-    margin: 0 5px;
-}
-
-#custom-power {
-    margin: 0 0;
-}
-
-#workspaces button,
-#custom-power {
-    padding: 0 10px;
-
-    color: #d4d4d4;
-    box-shadow: inherit;
-    text-shadow: inherit;
-    border-radius: 0;
-
-    /* Disable animations */
-    animation: unset;
-    transition: unset;
-}
-
 #workspaces button {
-    border-top: 1px solid rgba(0, 0, 0, 0);
-    border-bottom: 1px solid rgba(0, 0, 0, 0);
-    border-left: 1px solid rgba(0, 0, 0, 0);
+    margin-top: 4px;
+    padding: 0 5px;
+    border-radius: 0;
+    border-left: 1px solid rgba(180, 180, 180, 0.5);
 }
 
-#workspaces button:hover,
-#custom-power:hover {
-    background: rgba(60, 60, 60, 0.8);
+#workspaces button:first-child {
+    border-left: none;
+}
+
+#workspaces button:hover {
+    background: #3f424d;
     border: unset;
-    border-left: 1px solid rgba(0, 0, 0, 0);
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+    border-radius: 0;
+    border-left: 1px solid rgba(180, 180, 180, 0.5);
+    transition: none;
+    box-shadow: none;
 }
 
-#workspaces button.visible:first-child,
-#workspaces button:hover:first-child {
-    border-radius: 4px 0 0 4px;
-    border-left: 1px solid #fff;
-}
-
-#custom-power:hover {
-    border-radius: 0 4px 4px 0;
-    border-right: 1px solid #fff;
-}
-
-#workspaces button.visible {
-    background: rgba(60, 60, 60, 0.8);
-    color: #e3e3e3;
-    font-weight: 800;
+#workspaces button:first-child:hover {
+    padding: 0 6px 0 5px;
     border: unset;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
 }
+
+window#waybar > box {
+    margin: 0 6px 6px 6px;
+    padding: 0 10px 0 0;
+}
+
+#pulseaudio,
+#clock,
+#bluetooth {
+    padding-left: 6px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgba(180, 180, 180, 0.5);
+}
+
+#clock {
+    margin-top: 3px;
+    margin-left: 5px;
+    padding-left: 11px;
+}
+
+#tray {
+    margin: 4px 6px 0;
+}
+
+#bluetooth {
+    margin: 4px 0 0;
+    padding-left: 8px;
+    font-size: 1.2em;
+}
+
+#pulseaudio {
+    margin: 3px 6px 0;
+    padding-left: 12px;
+}
+
