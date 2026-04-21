@@ -34,13 +34,6 @@ input {
     focus-follows-mouse max-scroll-amount="0%"
 }
 
-// You can configure outputs by their name, which you can find
-// by running `niri msg outputs` while inside a niri instance.
-// The built-in laptop monitor is usually called "eDP-1".
-// Find more information on the wiki:
-// https://yalter.github.io/niri/Configuration:-Outputs
-// Remember to uncomment the node by removing "/-"!
-
 output "DP-1" {
     mode "2560x1440@143.912"
     position x=0 y=0
@@ -65,6 +58,7 @@ layout {
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
     center-focused-column "never"
+    default-column-display "tabbed"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
@@ -102,22 +96,12 @@ layout {
     }
 }
 
-// Add lines like this to spawn processes at startup.
-// Note that running niri as a session supports xdg-desktop-autostart,
-// which may be more convenient to use.
-// See the binds section below for more spawn examples.
-
-// This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "dunst"
 spawn-sh-at-startup "swaybg -i ~/Pictures/gp9x0l02jxtg1.jpeg"
 
-// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
-
 hotkey-overlay {
-    // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -125,7 +109,7 @@ hotkey-overlay {
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
- prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -149,6 +133,12 @@ window-rule {
     clip-to-geometry true
 }
 
+window-rule {
+    match app-id="vesktop"
+    open-on-output "HDMI-A-1"
+    open-maximized-to-edges true
+}
+
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
@@ -168,33 +158,6 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
 
-    // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
-    // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
-    // For example, this is a standard bind to toggle the screen reader (orca).
-    Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
-
-    // Example volume keys mappings for PipeWire & WirePlumber.
-    // The allow-when-locked=true property makes them work even when the session is locked.
-    // Using spawn-sh allows to pass multiple arguments together with the command.
-    // "-l 1.0" limits the volume to 100%.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
-
-    // Example media keys mapping using playerctl.
-    // This will work with any MPRIS-enabled media player.
-    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
-    XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
-    XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
-    XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
-
-    // Example brightness key mappings for brightnessctl.
-    // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
-    // but you need to manually put each argument in separate "" quotes.
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
-
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
@@ -203,25 +166,14 @@ binds {
     Mod+Q repeat=false { close-window; }
 
     Mod+A     { focus-column-left; }
-    Mod+Down  { focus-window-down; }
-    Mod+Up    { focus-window-up; }
+    Mod+Down  { focus-window-or-workspace-down; }
+    Mod+Up    { focus-window-or-workspace-up; }
     Mod+D     { focus-column-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Down  { move-window-down; }
     Mod+Ctrl+Up    { move-window-up; }
     Mod+Ctrl+Right { move-column-right; }
-    Mod+Ctrl+H     { move-column-left; }
-    Mod+Ctrl+J     { move-window-down; }
-    Mod+Ctrl+K     { move-window-up; }
-    Mod+Ctrl+L     { move-column-right; }
-
-    // Alternative commands that move across workspaces when reaching
-    // the first or last window in a column.
-    // Mod+J     { focus-window-or-workspace-down; }
-    // Mod+K     { focus-window-or-workspace-up; }
-    // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
-    // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
@@ -232,40 +184,16 @@ binds {
     Mod+Shift+Down  { focus-monitor-down; }
     Mod+Shift+Up    { focus-monitor-up; }
     Mod+Shift+Right { focus-monitor-right; }
-    Mod+Shift+H     { focus-monitor-left; }
-    Mod+Shift+J     { focus-monitor-down; }
-    Mod+Shift+K     { focus-monitor-up; }
-    Mod+Shift+L     { focus-monitor-right; }
 
     Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
     Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
     Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
     Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
-    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
-
-    // Alternatively, there are commands to move just a single window:
-    // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
-    // ...
-
-    // And you can also move a whole workspace to another monitor:
-    // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
-    // ...
 
     Mod+Page_Down      { focus-workspace-down; }
     Mod+Page_Up        { focus-workspace-up; }
-    Mod+U              { focus-workspace-down; }
-    Mod+I              { focus-workspace-up; }
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
-    Mod+Ctrl+U         { move-column-to-workspace-down; }
-    Mod+Ctrl+I         { move-column-to-workspace-up; }
-
-    // Alternatively, there are commands to move just a single window:
-    // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
-    // ...
 
     Mod+Shift+Page_Down { move-workspace-down; }
     Mod+Shift+Page_Up   { move-workspace-up; }
@@ -340,13 +268,8 @@ binds {
     // The following binds move the focused window in and out of a column.
     // If the window is alone, they will consume it into the nearby column to the side.
     // If the window is already in a column, they will expel it out.
-    Mod+BracketLeft  { consume-or-expel-window-left; }
-    Mod+BracketRight { consume-or-expel-window-right; }
-
-    // Consume one window from the right to the bottom of the focused column.
-    Mod+Comma  { consume-window-into-column; }
-    // Expel the bottom window from the focused column to the right.
-    Mod+Period { expel-window-from-column; }
+    Mod+Comma  { consume-or-expel-window-left; }
+    Mod+Period { consume-or-expel-window-right; }
 
     // Mod+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
@@ -398,8 +321,6 @@ binds {
     // Mod+Shift+Space { switch-layout "prev"; }
 
     Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
