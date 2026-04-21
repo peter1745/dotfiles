@@ -41,8 +41,7 @@ window#waybar > box {
 }
 
 #pulseaudio,
-#clock,
-#bluetooth {
+#clock {
     padding-left: 6px;
     border-left-width: 1px;
     border-left-style: solid;
@@ -57,12 +56,6 @@ window#waybar > box {
 
 #tray {
     margin: 4px 6px 0;
-}
-
-#bluetooth {
-    margin: 4px 0 0;
-    padding-left: 8px;
-    font-size: 1.2em;
 }
 
 #pulseaudio {

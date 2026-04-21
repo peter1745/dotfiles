@@ -3,14 +3,14 @@
         "output": "DP-1",
         "position": "bottom",
         "modules-left": ["niri/workspaces"],
-        "modules-right": ["tray", "pulseaudio", "bluetooth", "clock"],
+        "modules-right": ["tray", "pulseaudio", "clock"],
         "include": "~/.config/waybar/common.jsonc"
     },
     {
         "output": "HDMI-A-1",
         "position": "bottom",
         "modules-left": ["niri/workspaces"],
-        "modules-right": ["tray", "pulseaudio", "bluetooth", "clock"],
+        "modules-right": ["tray", "pulseaudio", "clock"],
         "include": "~/.config/waybar/common.jsonc"
     }
 ]

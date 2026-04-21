@@ -8,11 +8,5 @@
     "clock": {
         "format": "{:%H:%M}"
     },
-    "bluetooth": {
-        "format-connected": " {device_alias}",
-        "format-no-controller": "",
-        "format-on": "",
-        "on-click": "blueman-manager"
-    },
     "include": "/etc/xdg/waybar/config.jsonc"
 }
