@@ -8,6 +8,7 @@
 window#waybar {
     background-color: #1e1e2e;
     font-size: 1.2em;
+    border-top: 2px solid #505050;
 }
 
 #workspaces button {
@@ -36,7 +37,7 @@ window#waybar {
 }
 
 window#waybar > box {
-    margin: 0 6px 6px 6px;
+    margin: 4px 6px 4px 6px;
     padding: 0 10px 0 0;
 }
 
