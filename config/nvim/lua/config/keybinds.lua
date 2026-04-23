@@ -8,7 +8,10 @@ map({ "n", "i" }, "<C-q>",       "<cmd>tabclose<CR>",    { desc = "Close Current
 map({ "n", "i" }, "<C-A-Right>", "<cmd>tabnext<CR>",     { desc = "Next Tab" })
 map({ "n", "i" }, "<C-A-Left>",  "<cmd>tabprevious<CR>", { desc = "Previous Tab" })
 
-map({ "n", "i" }, "<C-n>", "<cmd>tabnew | Ex<CR>");
+map({ "n", "i" }, "<C-n>", "<cmd>tabnew | Ex<CR>")
+
+map({ "n" }, "<C-Left>", "b")
+map({ "n" }, "<C-Right>", "w")
 
 map({ "n", "i" }, "<C-b>", "<cmd>make<CR>",         { desc = "Build Project" })
 map({ "n", "i" }, "<F12>", function()
