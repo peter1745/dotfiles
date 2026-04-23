@@ -41,7 +41,7 @@ output "DP-1" {
 
 output "HDMI-A-1" {
     mode "1920x1080@60.000"
-    position x=2561 y=360
+    position x=2560 y=360
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -98,6 +98,7 @@ layout {
 
 spawn-at-startup "waybar"
 spawn-at-startup "dunst"
+spawn-at-startup "vesktop"
 spawn-sh-at-startup "swaybg -i ~/Pictures/gp9x0l02jxtg1.jpeg"
 
 hotkey-overlay {
@@ -137,6 +138,12 @@ window-rule {
     match app-id="vesktop"
     open-on-output "HDMI-A-1"
     open-maximized-to-edges true
+}
+
+window-rule {
+    match app-id="Pinentry-gtk"
+    match app-id="kaku-debug"
+    open-floating true
 }
 
 binds {
@@ -271,6 +278,9 @@ binds {
     Mod+Comma  { consume-or-expel-window-left; }
     Mod+Period { consume-or-expel-window-right; }
 
+    Mod+W { focus-window-up; }
+    Mod+S { focus-window-down; }
+
     // Mod+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
     // Mod+R { switch-preset-column-width-back; }
@@ -310,7 +320,7 @@ binds {
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
-    Mod+W { toggle-column-tabbed-display; }
+    //Mod+W { toggle-column-tabbed-display; }
 
     // Actions to switch layouts.
     // Note: if you uncomment these, make sure you do NOT have
