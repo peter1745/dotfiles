@@ -1,13 +1,7 @@
 require("config.lazy")
 require("config.options")
 require("config.keybinds")
-require("catppuccin").setup({
-	flavour = "mocha",
-	auto_integrations = true
-})
 require("lualine").setup()
-
-vim.cmd.colorscheme("catppuccin")
 
 vim.filetype.add{ extension = { ebnf = 'ebnf' } }
 vim.api.nvim_set_hl(0, '@string.special.grammar', { link = '@string.regex' })
