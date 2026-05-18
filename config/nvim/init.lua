@@ -2,27 +2,6 @@ require("config.lazy")
 require("config.options")
 require("config.keybinds")
 require("nvim-treesitter").install({ "c", "cpp", "lua", "ebnf", "rust" })
-require("telescope").setup({
-    pickers = {
-        find_files = {
-            mappings = {
-                i = {
-                    ["<CR>"] = function(bufnr)
-                        require("telescope.actions.set").edit(bufnr, "tab drop")
-                    end
-                },
-            },
-        },
-        man_pages = {
-            mappings = {
-                i = {
-                    ["<CR>"] = "select_vertical",
-                },
-            },
-        }
-    }
-})
-require("telescope").load_extension("fzf")
 require("catppuccin").setup({
 	flavour = "mocha",
 	auto_integrations = true
