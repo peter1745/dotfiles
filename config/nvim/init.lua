@@ -1,7 +1,6 @@
 require("config.lazy")
 require("config.options")
 require("config.keybinds")
-require("nvim-treesitter").install({ "c", "cpp", "lua", "ebnf", "rust" })
 require("catppuccin").setup({
 	flavour = "mocha",
 	auto_integrations = true
