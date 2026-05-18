@@ -1,7 +1,6 @@
 require("config.lazy")
 require("config.options")
 require("config.keybinds")
-require("lualine").setup()
 
 vim.filetype.add{ extension = { ebnf = 'ebnf' } }
 vim.api.nvim_set_hl(0, '@string.special.grammar', { link = '@string.regex' })
