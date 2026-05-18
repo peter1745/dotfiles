@@ -2,7 +2,6 @@ require("config.lazy")
 require("config.options")
 require("config.keybinds")
 
-vim.filetype.add{ extension = { ebnf = 'ebnf' } }
 vim.api.nvim_set_hl(0, '@string.special.grammar', { link = '@string.regex' })
 vim.api.nvim_set_hl(0, '@variable.grammar.pascal', { link = '@type' })
 vim.api.nvim_set_hl(0, '@variable.grammar.camel', { link = '@property' })
@@ -19,7 +18,7 @@ vim.lsp.config("clangd", {
 		"--background-index",
 		"--completion-style=detailed",
 	},
-    filetypes = { "c", "h", "cpp", "hpp" },
+    filetypes = { "c", "h", "cpp", "hpp" }
 })
 
 vim.lsp.config("lua_ls", {
