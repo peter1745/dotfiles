@@ -3,15 +3,15 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 -- Editor Bindings
-map({ "n", "i" }, "<C-t>",       "<cmd>tabnew<CR>",      { desc = "Open New Tab" })
+map({ "n", "i" }, "<C-S-t>",       "<cmd>tabnew<CR>",      { desc = "Open New Tab" })
 map({ "n", "i" }, "<C-q>",       "<cmd>tabclose<CR>",    { desc = "Close Current Tab" })
 map({ "n", "i" }, "<C-A-Right>", "<cmd>tabnext<CR>",     { desc = "Next Tab" })
 map({ "n", "i" }, "<C-A-Left>",  "<cmd>tabprevious<CR>", { desc = "Previous Tab" })
 
 map({ "n", "i" }, "<C-n>", "<cmd>tabnew | Ex<CR>")
 
-map({ "n" }, "<C-Left>", "b")
-map({ "n" }, "<C-Right>", "w")
+map({ "n", "v" }, "<C-Left>", "b")
+map({ "n", "v" }, "<C-Right>", "w")
 
 map({ "n", "i" }, "<C-b>", "<cmd>make<CR>",         { desc = "Build Project" })
 map({ "n", "i" }, "<F12>", function()
@@ -19,7 +19,10 @@ map({ "n", "i" }, "<F12>", function()
         reuse_win = true
     })
 end,  { desc = "Go to Definition" })
-map({ "n", "i" }, "<F2>",  vim.lsp.buf.rename,      { desc = "Rename Symbol" })
+map({ "n", "i" }, "<F2>",  function()
+    vim.lsp.buf.rename()
+    vim.cmd("wa")
+end,      { desc = "Rename Symbol" })
 
 -- Handle Split Navigation
 map("n", "<A-Up>",    "<C-w>k<CR>", { desc = "Move to split up" })
@@ -40,7 +43,7 @@ map("n", "<C-o>", function()
 end, { desc = "Find Files" })
 map("n", "<C-m>", function()
     telescope.man_pages({
-        sections = { "3", "3G" }
+        sections = { "ALL" }
     })
 end, { desc = "Find Files" })
 map("n", "<A-m>", telescope.lsp_document_symbols, { desc = "List Symbols" })
@@ -60,7 +63,7 @@ else
 end
 
 -- File Operations
-map("n", "<C-s>", "<cmd>w<CR>", { desc = "Save File" })
+map("n", "<C-s>", "<cmd>wa<CR>", { desc = "Save File" })
 
 vim.cmd([[ inoremap <expr> <cr> pumvisible() ? '<c-y>' : '<cr>' ]])
 

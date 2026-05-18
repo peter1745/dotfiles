@@ -1,7 +1,10 @@
 local M = {}
 
+function string:endswith(suffix)
+    return self:sub(-#suffix) == suffix
+end
+
 function M.switch()
-    -- 
     local old_edit = vim.cmd.edit
     vim.cmd.edit = function(filepath)
         local open_windows = vim.api.nvim_list_wins()
@@ -20,9 +23,14 @@ function M.switch()
         end
 
         vim.cmd.edit = old_edit
-
         if not found_existing then
-            vim.cmd("vsplit | edit " .. filepath)
+            local cmd = "vs | edit" .. filepath
+
+            if filepath:endswith("hpp") then
+                cmd = "topleft " .. cmd
+            end
+
+            vim.cmd(cmd)
         end
     end
     vim.cmd([[ LspClangdSwitchSourceHeader]])
