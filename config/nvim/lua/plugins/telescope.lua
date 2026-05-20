@@ -25,20 +25,25 @@ return {
             "nvim-lua/plenary.nvim",
             { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }
         },
-        opts = {
-            pickers = {
-                find_files = {
-                    mappings = { i = {
-                        ["<CR>"] = find_files_edit
-                    },
-                    hidden = true
-                }},
-                man_pages = { mappings = { i = {
-                    ["<CR>"] = "select_vertical"
-                }}}
-            }
-        },
         config = function()
+            require("telescope").setup{
+                pickers = {
+                    find_files = {
+                        mappings = {
+                            i = { ["<CR>"] = find_files_edit },
+                            n = { ["<CR>"] = find_files_edit }
+                        },
+                        hidden = true
+                    },
+                    man_pages = {
+                        mappings = {
+                            i = { ["<CR>"] = "select_vertical" },
+                            n = { ["<CR>"] = "select_vertical" },
+                        }
+                    }
+                }
+            }
+
             require("telescope").load_extension("fzf")
         end
     }
